@@ -4,6 +4,7 @@
   "description": "Getting some data from Codeforces.",
   "main": "index.js",
   "scripts": {
+    "build": "echo \"NO BUILD\"",
     "start": "node index.js"
   },
   "repository": {

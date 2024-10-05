@@ -97,10 +97,12 @@ const getAc = async (url) => {
       },
     };
   } catch (err) {
+    console.log(err);
     return {
       status: "FAILED",
       result: "There is something wrong :(",
       err: err.message,
+      error: err,
     };
   }
 };
@@ -126,7 +128,7 @@ app.use("/ac", router);
 app.use(express.static("public"));
 
 // Handle root route
-app.get("/", (req, res) => res.send("Express on Vercel"));
+app.get("/", (req, res) => res.sendFile(path.join(__dirname, "public", "index.html")));
 
 // Handle 404 errors
 app.use((req, res) => {
